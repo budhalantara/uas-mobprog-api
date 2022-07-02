@@ -3,13 +3,14 @@ import express from 'express'
 import db from './helper/db.js'
 import { ValidationError } from 'yup'
 import ApiError from './helper/ApiError.js'
+import studentRouter from './api/student/router.js'
 
 const app = express()
 
 app.disable('x-powered-by')
 app.use(express.json())
 
-// TODO: routes
+app.use(studentRouter)
 
 app.use((req) => {
   console.log('Not Found:', req.method, req.path)
