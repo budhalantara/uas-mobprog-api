@@ -1,10 +1,8 @@
-import dotenv from 'dotenv'
+import 'dotenv/config'
 import express from 'express'
 import db from './helper/db.js'
 import { ValidationError } from 'yup'
 import ApiError from './helper/ApiError.js'
-
-dotenv.config()
 
 const app = express()
 
