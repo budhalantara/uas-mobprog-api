@@ -5,6 +5,7 @@ import { ValidationError } from 'yup'
 import ApiError from './helper/ApiError.js'
 import fileRouter from './api/file/router.js'
 import lecturerRouter from './api/lecturer/router.js'
+import majorRouter from './api/major/router.js'
 import studentRouter from './api/student/router.js'
 
 const app = express()
@@ -14,6 +15,7 @@ app.use(express.json())
 
 app.use(fileRouter)
 app.use(lecturerRouter)
+app.use(majorRouter)
 app.use(studentRouter)
 
 app.use((req) => {
