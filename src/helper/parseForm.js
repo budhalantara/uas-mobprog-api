@@ -1,8 +1,8 @@
-const path = require('path')
-const formidable = require('formidable')
-const fse = require('fs-extra')
+import path from 'path'
+import formidable from 'formidable'
+import fse from 'fs-extra'
 
-const uploadDir = path.resolve('public')
+const uploadDir = path.resolve('tmp')
 const defaultOptions = {
   uploadDir,
 }
