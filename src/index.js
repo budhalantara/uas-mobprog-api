@@ -4,6 +4,7 @@ import db from './helper/db.js'
 import { ValidationError } from 'yup'
 import ApiError from './helper/ApiError.js'
 import fileRouter from './api/file/router.js'
+import lecturerRouter from './api/lecturer/router.js'
 import studentRouter from './api/student/router.js'
 
 const app = express()
@@ -12,6 +13,7 @@ app.disable('x-powered-by')
 app.use(express.json())
 
 app.use(fileRouter)
+app.use(lecturerRouter)
 app.use(studentRouter)
 
 app.use((req) => {
