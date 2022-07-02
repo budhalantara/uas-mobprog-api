@@ -7,6 +7,7 @@ import fileRouter from './api/file/router.js'
 import lecturerRouter from './api/lecturer/router.js'
 import majorRouter from './api/major/router.js'
 import studentRouter from './api/student/router.js'
+import subjectRouter from './api/subject/router.js'
 
 const app = express()
 
@@ -17,6 +18,7 @@ app.use(fileRouter)
 app.use(lecturerRouter)
 app.use(majorRouter)
 app.use(studentRouter)
+app.use(subjectRouter)
 
 app.use((req) => {
   console.log('Not Found:', req.method, req.path)

@@ -1,13 +1,15 @@
 import db from '../../helper/db.js'
 
-const majorRepository = {
+const subjectRepository = {
   async getAll() {
     const query = `
       SELECT
         id,
+        major_id,
         name,
+        credits,
         created_at
-      FROM majors
+      FROM subjects
       WHERE
         deleted_at IS NULL
     `
@@ -19,9 +21,11 @@ const majorRepository = {
     const query = `
       SELECT
         id,
+        major_id,
         name,
+        credits,
         created_at
-      FROM majors
+      FROM subjects
       WHERE
         id = :id
     `
@@ -31,14 +35,18 @@ const majorRepository = {
 
   async create(data) {
     const query = `
-      INSERT INTO majors(
+      INSERT INTO subjects(
         id,
+        major_id,
         name,
+        credits,
         created_at
       )
       VALUES(
         :id,
+        :major_id,
         :name,
+        :credits,
         :created_at
       )
     `
@@ -48,9 +56,11 @@ const majorRepository = {
 
   async update(id, data) {
     const query = `
-      UPDATE majors
+      UPDATE subjects
       SET
-        name = :name
+        major_id = :major_id,
+        name = :name,
+        credits = :credits
       WHERE
         id = :id
     `
@@ -60,7 +70,7 @@ const majorRepository = {
 
   async delete(id) {
     const query = `
-      UPDATE majors
+      UPDATE subjects
       SET
         deleted_at = :deleted_at
       WHERE
@@ -71,4 +81,4 @@ const majorRepository = {
   },
 }
 
-export default majorRepository
+export default subjectRepository
